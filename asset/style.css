@@ -1,0 +1,89 @@
+html{
+  box-sizing: border-box;
+  font-size: 1px;
+}
+:root {
+  --grey-text: #6C6C7D;
+  --grey-light: #BDBDC4;
+  --blue-deep: #1B1A34;
+  --blue-link: #505DD1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Roboto', sans-serif;  font-size: 16rem;
+  width: 100%;
+  height: 100vh;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.main {
+  width: 100%;
+  height: 90%;
+  margin: 10%;
+  position: relative;
+}
+header {
+  text-align: center;
+  font-size: 24rem;
+  font-weight: bold;
+  line-height: 28rem;
+  color: #000000;
+  margin: 2em 0 1em 0;
+}
+.login-info {
+  text-align: center;
+  font-size: 16rem;
+  color: #6C6C7D;
+  margin-bottom: 18rem;
+}
+label {
+  font-family: inherit;
+  display: block;
+  font-size: 16rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+input {
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  margin-bottom: 2.2em;
+  padding: 1.2em;
+  border-radius: 10px;
+}
+input[type=text], input[type=password] {
+  border: 2px solid var(--grey-light);
+  color: var(--grey-text);
+}
+input[type=submit] {
+  border: 0;
+  color: #ffffff;
+  background-color: var(--blue-deep);
+  margin: 0 0 2.2em 0;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: var(--blue-link);
+}
+.link-admin {
+  color: var(--blue-link);
+  font-size: 18rem;
+  margin-bottom: 2.6em;
+}
+.copyright {
+  color: var(--grey-text);
+}
