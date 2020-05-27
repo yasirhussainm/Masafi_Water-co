@@ -42,7 +42,7 @@ if ((isset($_POST['username'])) && (isset($_POST['password'])))
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/style.css" />
-    
+
     <title>Masafi water ditribution company</title>
 </head>
 <body>
@@ -68,9 +68,9 @@ if ((isset($_POST['username'])) && (isset($_POST['password'])))
     }
     ?>
     <div class="login-form">
-        <form action="">
-            <label for="login-id">Driver Id</label>
-            <input type="text" name="login-id" id="login-id" placeholder="Enter your Username">
+        <form method="post">
+            <label for="username">Driver Id</label>
+            <input type="text" name="username" id="username" placeholder="Enter your Username">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Enter your Password">
             <input type="submit" name="submit" value="Log In">
