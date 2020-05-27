@@ -38,7 +38,7 @@ if ((isset($_POST['mobile'])) && (isset($_POST['iqama'])) && (isset($_POST['name
                 ':rem_bottles'=>0,
                 ':iqama'=>$_POST['iqama']));
             $_SESSION['success'] = "Record added";
-            header('Location: agent_portal.php');
+            header('Location: index_admin.php');
             return;
 
 }
