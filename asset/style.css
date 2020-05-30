@@ -65,9 +65,8 @@ input[type=text], input[type=password] {
   color: var(--grey-text);
 }
 input:focus {
-  border-radius: 10px;
   outline: 0;
-  border: 1.5px solid var(--grey-light);
+  border: 2px solid rgb(255, 255, 255);
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .1);
 }
 input[type=submit] {
@@ -75,6 +74,7 @@ input[type=submit] {
   color: #ffffff;
   background-color: var(--blue-deep);
   margin: 0 0 2.2em 0;
+  cursor: pointer;
 }
 footer {
   position: absolute;
