@@ -31,21 +31,24 @@ if ((isset($_POST['username'])) && (isset($_POST['password'])))
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="asset/stylesheet.css">
-    <title>Water dist.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/style.css" />
+
+    <title>Masafi water ditribution company</title>
 </head>
 <body>
-<main>
-<header>
-    <div class="header--heading">
-        Masafi Water
+<div class="wrapper">
+<div class="main">
+    <header>
+        Login
+    </header>
+    <div class="login-info">
+        <p>Login as Admin</p>
     </div>
     <?php
 
@@ -60,29 +63,21 @@ if ((isset($_POST['username'])) && (isset($_POST['password'])))
         unset($_SESSION['error']);
     }
     ?>
-    <nav>
-        <div class="nav--user-toggle">
-            <a href="index.php"><div class="nav--user-toggle-link">DRIVER</div></a>
-            <a href="index_admin.php" class="active"><div class="nav--user-toggle-link">ADMIN</div></a>
-        </div>
-    </nav>
-</header>
-<section>
-<div class="container">
-<div class="login-box">
-    <div class="login--icon">
-        <img src="asset/img/car.png" alt="">
+    <div class="login-form">
+        <form method="post">
+            <label for="username">Admin Id</label>
+            <input type="text" name="username" id="username" placeholder="Enter your Username">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your Password">
+            <input type="submit" name="submit" value="Log In">
+        </form>
     </div>
-    <form method="post">
-        <div class="login--input"><input class="login--input-types" type="text" placeholder="Admin Id" id="username" name="username" required></div>
-        <div class="login--input"><input class="login--input-types" type="password" placeholder="Password" id="password" name="password" required></div>
-        <div class="login--input"><button class="login--input-types" id="submit" name="submit">Submit</button></div>
-    </form>
+    <footer>
+        <p class="link-admin"><a href="./index.php">Go to Driver portal</a></p>
+        <p class="copyright">&copy;All right Reserved Masafi water co.</p>
+    </footer>
 </div>
 </div>
-</section>
-
-</main>
 <!--<script src="asset/app.js"></script>-->
 </body>
 </html>

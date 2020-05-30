@@ -77,7 +77,7 @@ if ((isset($_POST['username'])) && (isset($_POST['password'])))
         </form>
     </div>
     <footer>
-        <p class="link-admin"><a href="">Go to Admin portal</a></p>
+        <p class="link-admin"><a href="./index_admin.php">Go to Admin portal</a></p>
         <p class="copyright">&copy;All right Reserved Masafi water co.</p>
     </footer>
 </div>
