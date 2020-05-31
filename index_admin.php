@@ -72,11 +72,11 @@ if ((isset($_POST['username'])) && (isset($_POST['password'])))
             <input type="submit" name="submit" value="Log In">
         </form>
     </div>
-    <footer>
-        <p class="link-admin"><a href="./index.php">Go to Driver portal</a></p>
-        <p class="copyright">&copy;All right Reserved Masafi water co.</p>
-    </footer>
 </div>
+<footer>
+    <p class="link-admin"><a href="./index.php">Go to Driver portal</a></p>
+    <p class="copyright">&copy;All right Reserved Masafi water co.</p>
+</footer>
 </div>
 <!--<script src="asset/app.js"></script>-->
 </body>

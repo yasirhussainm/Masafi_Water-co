@@ -30,21 +30,21 @@
     <header>
         Admin's portal
     </header>
-    <!-- <div class="login-info">
-        <p>Login as Admin</p>
-    </div> -->
+    <div class="login-info">
+        <p>Loged in as Admin</p>
+    </div>
         <?php
 
-        // if ( isset($_SESSION['success']) ) {
+        if ( isset($_SESSION['success']) ) {
 
-        //     echo('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
-        //     unset($_SESSION['success']);
-        // }
-        // if ( isset($_SESSION['error']) ) {
+            echo('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
+            unset($_SESSION['success']);
+        }
+        if ( isset($_SESSION['error']) ) {
 
-        //     echo('<p style="color: red;">'.htmlentities($_SESSION['error'])."</p>\n");
-        //     unset($_SESSION['error']);
-        // }
+            echo('<p style="color: red;">'.htmlentities($_SESSION['error'])."</p>\n");
+            unset($_SESSION['error']);
+        }
         ?>
     <div class="admin--btn-layout row">
         <button class="btn onebytwo left-btn" onclick="document.getElementById('id01').style.display='block'">
@@ -60,11 +60,11 @@
         <i class="fas fa-users-cog"></i> Transaction
         </button>
     </div>
-    <footer>
-        <p class="link-admin"><a href="./logout.php">Logout</a></p>
-        <p class="copyright">&copy;All right Reserved Masafi water co.</p>
-    </footer>
 </div>
+<footer>
+    <p class="link-admin"><a href="./logout.php">Logout</a></p>
+    <p class="copyright">&copy;All right Reserved Masafi water co.</p>
+</footer>
 </div>
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -86,7 +86,7 @@
 
 <div id="id02" class="modal">
   <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <div class="modal-content">
     <div class="modal--container">
       <h2>Customer</h2>
       <hr>
@@ -99,7 +99,7 @@
         </button>
       </div>
     </div>
-  </form>
+    </div>
 </div>
 
 <script>
@@ -112,8 +112,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-</script>
-<script>
+
 // Get the modal
 var modal = document.getElementById('id02');
 
