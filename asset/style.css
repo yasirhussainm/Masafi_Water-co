@@ -44,6 +44,9 @@ header {
   color: #6C6C7D;
   margin-bottom: 18rem;
 }
+.login-form {
+  margin: 0 0 2.2em 0;
+}
 label {
   font-family: inherit;
   display: block;
@@ -73,7 +76,12 @@ input[type=submit] {
   border: 0;
   color: #ffffff;
   background-color: var(--blue-deep);
-  margin: 0 0 2.2em 0;
+  cursor: pointer;
+}
+.btn {
+  border: 0;
+  color: #ffffff;
+  background-color: var(--blue-deep);
   cursor: pointer;
 }
 footer {
