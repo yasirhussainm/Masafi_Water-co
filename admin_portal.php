@@ -47,10 +47,10 @@
         // }
         ?>
     <div class="admin--btn-layout row">
-        <button class="btn onebytwo left-btn">
+        <button class="btn onebytwo left-btn" onclick="document.getElementById('id01').style.display='block'">
             <i class="fas fa-user-tie"></i> Driver
         </button>
-        <button class="btn onebytwo">
+        <button class="btn onebytwo" onclick="document.getElementById('id02').style.display='block'">
             <i class="fas fa-user-friends"></i> Customer
         </button>
         <button class="btn one">
@@ -66,6 +66,64 @@
     </footer>
 </div>
 </div>
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="modal--container">
+      <h2>Driver</h2>
+      <hr>
+      <div class="row">
+      <button class="btn onebytwo left-btn" onclick="document.getElementById('id01').style.display='block'">
+      <i class="fas fa-plus"></i> Add
+        </button>
+        <button class="btn onebytwo">
+        <i class="fab fa-buffer"></i> View
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="modal--container">
+      <h2>Customer</h2>
+      <hr>
+      <div class="row">
+      <button class="btn onebytwo left-btn" onclick="document.getElementById('id02').style.display='block'">
+      <i class="fas fa-plus"></i> Add
+        </button>
+        <button class="btn onebytwo">
+        <i class="fab fa-buffer"></i> View
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 <!--<script src="asset/app.js"></script>-->
 </body>
 </html>

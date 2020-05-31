@@ -114,7 +114,7 @@ a {
   background-color: #ffffff;
   cursor: pointer;
   padding: 0.9em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-radius: 10px;
   margin: 0.5em 0 0.5em 0;
 }
@@ -129,4 +129,83 @@ a {
 }
 i {
   float: left;
+}
+/*-----*/
+/*MODAL*/
+/*------/
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.modal--container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(255, 255, 255, .8);
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  background-color: #fefefe;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, .2);
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
 }
