@@ -78,12 +78,6 @@ input[type=submit] {
   background-color: var(--blue-deep);
   cursor: pointer;
 }
-.btn {
-  border: 0;
-  color: #ffffff;
-  background-color: var(--blue-deep);
-  cursor: pointer;
-}
 footer {
   position: absolute;
   bottom: 0;
@@ -101,4 +95,38 @@ a {
 }
 .copyright {
   color: var(--grey-text);
+}
+/*========*/
+/* PORTAL */
+/*========*/
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin--btn-layout {
+  flex-wrap: wrap;
+  
+}
+.btn {
+  border: 4px solid var(--blue-deep);
+  color: var(--blue-deep);
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 0.9em;
+  font-size: 1.5em;
+  border-radius: 10px;
+  margin: 0.5em 0 0.5em 0;
+}
+.onebytwo {
+  flex: 1 1 auto;
+}
+.one {
+  flex: 1 0 100%;
+}
+.left-btn {
+  margin-right: 1em;
+}
+i {
+  float: left;
 }
