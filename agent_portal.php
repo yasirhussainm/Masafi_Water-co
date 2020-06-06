@@ -65,7 +65,9 @@ if (!isset($_SESSION['driver'])){
       <a href="report.php">Report</a> |
       <a href="add_customer.php">Add Customer</a> |
       <a href="view_customer.php">View Customer</a> |
-      <a href="transactions.php">Transactions</a>
+      <a href="transactions.php">Transactions</a> |
+      <? echo('<a href="change_password_driver.php?driver_id='.$_SESSION['driver_id'].'">Change password</a>');
+        echo($_SESSION['driver_id']);?>
     </p>
 </div>
 </div>
