@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once "pdo.php";
+require_once "util.php";
+require_once "head.php";
 if ((!isset($_SESSION['driver'])) && (!isset($_SESSION['admin']))) {
     die("ACCESS DENIED");
 }
@@ -8,40 +10,7 @@ if ( isset($_POST['cancel']) ) {
     header('Location: index.php');
     return;
 }
-if ((isset($_POST['mobile'])) && (isset($_POST['iqama'])) && (isset($_POST['name'])) && (isset($_POST['email'])))
-{
-        if (((strlen($_POST['name']))<1) || ((strlen($_POST['email']))<1)
-              || ((strlen($_POST['mobile']))<1) || ((strlen($_POST['iqama']))<1)) {
-          $_SESSION['error'] = 'All fields are required';
-          header('Location: add_customer.php');
-          return;
-        }
-        if (!is_numeric($_POST['mobile'])){
-          $_SESSION['error'] = 'mobile must be an integer';
-          header('Location: add_customer.php');
-          return;
-        }
-        if (!is_numeric($_POST['iqama'])){
-          $_SESSION['error'] = 'iqama must be an integer';
-          header('Location: add_customer.php');
-          return;
-        }
 
-
-            $sql = "INSERT INTO customer (name,email,mobile,iqama,rem_bottles)
-                      VALUES (:name, :email, :mobile, :iqama, :rem_bottles)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute(array(
-                ':name'=>$_POST['name'],
-                ':email'=>$_POST['email'],
-                ':mobile'=>$_POST['mobile'],
-                ':rem_bottles'=>0,
-                ':iqama'=>$_POST['iqama']));
-            $_SESSION['success'] = "Record added";
-            header('Location: index_admin.php');
-            return;
-
-}
 ?>
 
 <!DOCTYPE html>
@@ -58,29 +27,32 @@ if ((isset($_POST['mobile'])) && (isset($_POST['iqama'])) && (isset($_POST['name
 <body>
 <h1>Tracking data for <?php echo(htmlentities((isset($_SESSION['driver'])) ? $_SESSION['driver'] : $_SESSION['admin'])); ?></h1>
 <?php
-// Note triple not equals and think how badly double
-// not equals would work here...
+
 if ( isset($_SESSION['success']) ) {
-    // Look closely at the use of single and double quotes
     echo('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
     unset($_SESSION['success']);
 }
 if ( isset($_SESSION['error']) ) {
-    // Look closely at the use of single and double quotes
     echo('<p style="color: red;">'.htmlentities($_SESSION['error'])."</p>\n");
     unset($_SESSION['error']);
 }
 ?>
-<form method="POST"><br/><br/>
+<form action="upload.php" method="POST" enctype="multipart/form-data"><br/><br/>
 <label for="name">Name</label>
 <input type="text" name="name" id="name"><br/>
 <label for="email">email</label>
 <input type="text" name="email" id="email"><br/>
 <label for="mobile">mobile</label>
-<input type="text" name="mobile" id="mobile"><br/>
+<input type="number" name="mobile" id="mobile"><br/>
 <label for="iqama">iqama</label>
-<input type="text" name="iqama" id="iqama"><br/>
-<input type="submit" value="Add">
+<input type="number" name="iqama" id="iqama"><br/>
+<label>iqama photo:</label>
+<input type="file" name="image_iqama"><br/>
+<label>agreement photo:</label>
+<input type="file" name="image_agreement"><br/>
+<input type="submit" name="submit" value="Add">
+</form>
+<form  method="POST">
 <input type="submit" name="cancel" value="cancel">
 </form>
 </div>

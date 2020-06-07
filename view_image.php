@@ -1,14 +1,25 @@
+<!-- This file is intented to view the profile of individual users
+by parsing information in GET parametre -->
 <?php
 session_start();
 require_once "pdo.php";
 
-if ( isset($_POST['cancel']) ) {
-    header('Location: index.php');
+if ( !isset($_GET['customer_id']))  {
+  $_SESSION['error'] = "Missing Parametres";
+  header('Location: index.php');
+  return;
+}
+if ((!isset($_SESSION['driver'])) && (!isset($_SESSION['admin']))) {
+    die('NO ACCESS');
     return;
 }
 
-$stmt = $pdo->query("SELECT name, email, mobile, iqama, customer_id FROM customer");
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if (isset($_GET['customer_id'])){
+  $stmt = $pdo->prepare("SELECT image_iqama,image_agreement FROM customer where customer_id = :customer_id");
+  $stmt->execute(array(":customer_id" => $_GET['customer_id']));
+  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +54,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
 <div class="container">
-<h2>Customer Details</h2>
+<h1>Documents</h1>
 <?php
 
 
@@ -55,38 +66,14 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       echo('<p style="color: red;">'.htmlentities($_SESSION['error'])."</p>\n");
       unset($_SESSION['error']);
   }
-  if(!empty($rows)){
-    echo('<table border="1">'."\n");
-    echo('<thead><tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Mobile No</th>
-    <th>Iqama</th>
-    <th>Documents</th>
-    <th>Action</th>
-    </tr></thead>');
-    foreach ($rows as $row){
-      echo "<tr><td>";
-      echo(htmlentities($row['name']));
-      echo("</td><td>");
-      echo(htmlentities($row['email']));
-      echo("</td><td>");
-      echo(htmlentities($row['mobile']));
-      echo("</td><td>");
-      echo(htmlentities($row['iqama']));
-      echo("</td><td>");
-      echo('<a href="view_image.php?customer_id='.$row['customer_id'].'">View</a> ');
-      echo("</td><td>");
-      echo('<a href="edit_customer.php?customer_id='.$row['customer_id'].'">Edit</a> / ');
-      echo('<a href="delete_customer.php?customer_id='.$row['customer_id'].'">Delete</a>');
-      echo("</td></tr>\n");
-    }
-  }
-  else echo('<p>No Rows found');
+  if ($row!== false) {
 
+          $url_image_iqama = 'uploads/'.$row["image_iqama"];
+          $url_image_agreement = 'uploads/'.$row["image_agreement"];
+    ?>
+      <img src="<?= $url_image_iqama; ?>" />
+      <img src="<?= $url_image_agreement; ?>" />
+    <?php } ?>
 
-?>
-<p><a href="add_customer.php">Add New Entry</a></p>
-<p><a href="index.php">Cancel</a></p>
-
+<p><a href="view_customer.php">Go Back</a></p>
 </body>

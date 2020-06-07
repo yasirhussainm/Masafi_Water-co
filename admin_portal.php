@@ -1,12 +1,12 @@
 <?php
-// session_start();
-// if (isset($_SESSION['driver'])){
-//   if (!isset($_SESSION['admin']))
-//   die("YOU DONOT HAVE THE PRIVILAGE TO BE HERE - TRY LOGGING IN AS ADMIN");
-// }
-// if (!isset($_SESSION['admin'])) {
-//   die("NOT LOGGED IN");
-// }
+ session_start();
+ if (isset($_SESSION['driver'])){
+   if (!isset($_SESSION['admin']))
+   die("YOU DONOT HAVE THE PRIVILAGE TO BE HERE - TRY LOGGING IN AS ADMIN");
+ }
+ if (!isset($_SESSION['admin'])) {
+   die("NOT LOGGED IN");
+ }
 
  ?>
 
