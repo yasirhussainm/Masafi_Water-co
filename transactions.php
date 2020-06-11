@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once "pdo.php";
+require_once "util.php";
+require_once "head.php";
 if ((!isset($_SESSION['driver'])) && (!isset($_SESSION['admin']))) {
     die("ACCESS DENIED");
 }
@@ -96,7 +98,7 @@ if ( isset($_SESSION['error']) ) {
 ?>
 <form method="POST"><br/><br/>
 <label for="name">Name</label>
-<input type="text" name="name" id="name"><br/>
+<input type="text" name="name" class="customer_name" id="name"><br/>
 <label for="added">added</label>
 <input type="text" name="added" id="added"><br/>
 <label for="returned">returned</label>
@@ -106,5 +108,14 @@ if ( isset($_SESSION['error']) ) {
 <input type="submit" value="Add">
 <input type="submit" name="cancel" value="cancel">
 </form>
+<script>
+
+$(document).ready(function(){
+    window.console && console.log('Document ready called');
+    $('.customer_name').autocomplete({
+        source: "customer_name_json.php"
+    });
+});
+</script>
 </div>
 </body>

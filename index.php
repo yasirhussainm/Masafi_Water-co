@@ -13,18 +13,25 @@ if (isset($_SESSION['admin'])) {
 
 if ((isset($_POST['username'])) && (isset($_POST['password'])))
 {
-  $sql = ("SELECT username, password,name,driver_id FROM pass_driver WHERE username = :username AND password =:pass");
+  $sql = ("SELECT username, password,name,driver_id FROM pass_driver WHERE username = :username");
   $stmt = $pdo->prepare($sql);
   $stmt->execute(array(
-      ':username' => $_POST['username'],
-      ':pass' => md5($_POST['password'])));
+      ':username' => $_POST['username']));
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
   if ( $row == true ) {
-   $_SESSION['driver'] = $row['name'];
-   $_SESSION['driver_id'] = $row['driver_id'];
-   header('Location: agent_portal.php');
-   return;
+    if (password_verify($_POST['password'],$row['password'])) {
+      $_SESSION['driver'] = $row['name'];
+      $_SESSION['driver_id'] = $row['driver_id'];
+      header('Location: agent_portal.php');
+      return;
+    }
+    else {
+      $_SESSION['error'] = 'Invalid Credentials';
+      header('Location: index.php');
+      return;
+    }
+
   }
   else {
     $_SESSION['error'] = 'Invalid Credentials';

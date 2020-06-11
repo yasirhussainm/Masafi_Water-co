@@ -41,7 +41,7 @@ if ((isset($_POST['username'])) && (isset($_POST['name'])))
             $stmt->execute(array(
                 ':name'=>$_POST['name'],
                 ':username'=>$_POST['username'],
-                ':password'=>md5('masafi123')));
+                ':password'=>password_hash("masafi123", PASSWORD_DEFAULT)));
             $_SESSION['success'] = "Record added";
             header('Location: admin_portal.php');
             return;
