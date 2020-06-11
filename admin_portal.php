@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="/">
 
     <title>Masafi water ditribution company</title>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -68,20 +66,20 @@
 </div>
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <div class="modal-content">
     <div class="modal--container">
       <h2>Driver</h2>
       <hr>
       <div class="row">
-      <button class="btn onebytwo left-btn" onclick="document.getElementById('id01').style.display='block'">
-      <i class="fas fa-plus"></i> Add
+        <button class="btn onebytwo left-btn" onclick="document.getElementById('id01').style.display='block'">
+        <i class="fas fa-plus"></i> Add
         </button>
         <button class="btn onebytwo">
         <i class="fab fa-buffer"></i> View
         </button>
       </div>
     </div>
-  </form>
+  </div>
 </div>
 
 <div id="id02" class="modal">
@@ -104,12 +102,12 @@
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
+var modalOne = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modalOne) {
+    modalOne.style.display = "none";
   }
 }
 
@@ -123,6 +121,7 @@ window.onclick = function(event) {
   }
 }
 </script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!--<script src="asset/app.js"></script>-->
 </body>
 </html>
