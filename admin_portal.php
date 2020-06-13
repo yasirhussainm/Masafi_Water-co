@@ -18,8 +18,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/style.css" />
-    <link rel="stylesheet" href="/">
-
     <title>Masafi water ditribution company</title>
 </head>
 <body>
@@ -51,10 +49,10 @@
         <button class="btn onebytwo" onclick="document.getElementById('id02').style.display='block'">
             <i class="fas fa-user-friends"></i> Customer
         </button>
-        <button class="btn one">
+        <button class="btn one" onclick="window.location.href='./report.php';">
         <i class="fas fa-database"></i> Report
         </button>
-        <button class="btn one">
+        <button class="btn one" onclick="window.location.href='./transactions.php';">
         <i class="fas fa-users-cog"></i> Transaction
         </button>
     </div>
@@ -71,10 +69,10 @@
       <h2>Driver</h2>
       <hr>
       <div class="row">
-        <button class="btn onebytwo left-btn" onclick="document.getElementById('id01').style.display='block'">
+        <button class="btn onebytwo left-btn" onclick="window.location.href='./add_user.php';">
         <i class="fas fa-plus"></i> Add
         </button>
-        <button class="btn onebytwo">
+        <button class="btn onebytwo" onclick="window.location.href='./view_user.php';">
         <i class="fab fa-buffer"></i> View
         </button>
       </div>
@@ -89,10 +87,10 @@
       <h2>Customer</h2>
       <hr>
       <div class="row">
-      <button class="btn onebytwo left-btn" onclick="document.getElementById('id02').style.display='block'">
+      <button class="btn onebytwo left-btn" onclick="window.location.href='./add_customer.php';">
       <i class="fas fa-plus"></i> Add
         </button>
-        <button class="btn onebytwo">
+        <button class="btn onebytwo" onclick="window.location.href='./view_customer.php';">
         <i class="fab fa-buffer"></i> View
         </button>
       </div>
@@ -102,22 +100,22 @@
 
 <script>
 // Get the modal
-var modalOne = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalOne) {
-    modalOne.style.display = "none";
-  }
-}
-
-// Get the modal
-var modal = document.getElementById('id02');
+var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modalOne = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalOne) {
+    modalOne.style.display = "none";
   }
 }
 </script>
