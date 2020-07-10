@@ -8,21 +8,23 @@ if (!isset($_SESSION['driver'])){
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="asset/stylesheet.css">
-    <title>Masafi water dist. co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/style.css" />
+    <title>Masafi water ditribution company</title>
 </head>
 <body>
-<main>
-<header>
-    <div class="header--heading">
-        Masafi Water - Driver Portal
+<div class="wrapper">
+<div class="main">
+    <header>
+        Agent's portal
+    </header>
+    <div class="login-info">
+        <p>Loged in as <?php echo($_SESSION['driver']); ?></p>
     </div>
     <?php
 
@@ -37,43 +39,31 @@ if (!isset($_SESSION['driver'])){
         unset($_SESSION['error']);
     }
     ?>
-    <nav>
-        <div class="nav--user-toggle">
-            <div class="nav--user-toggle-info">You have logged in as <?php echo($_SESSION['driver']); ?></div>
-        </div>
-    </nav>
-</header>
-<section>
-<div class="container">
-<div class="portal--option-box">
-    <ul class="portal--options">
-        <li>
-            <div><i class="fa fa-bars" style="font-size: 48px;"></i></div><br/>
-            <div><p>Report</p></div>
-        </li>
-        <li>
-            <div><i class="fa fa-plus-square" style="font-size: 48px;"></i></div><br/>
-            <div><p>Add Customer</p></div>
-        </li>
-        <li>
-            <div><i class="fa fa-shopping-cart" style="font-size: 48px;"></i></div><br/>
-            <div><p>Transaction</p></div>
-        </li>
-    </ul>
-    <p>
-      <a href="logout.php">Logout</a> |
-      <a href="report.php">Report</a> |
-      <a href="add_customer.php">Add Customer</a> |
-      <a href="view_customer.php">View Customer</a> |
-      <a href="transactions.php">Transactions</a> |
-      <? echo('<a href="change_password_driver.php?driver_id='.$_SESSION['driver_id'].'">Change password</a>');
-        echo($_SESSION['driver_id']);?>
-    </p>
+    <div class="admin--btn-layout row">
+        <button class="btn onebytwo left-btn" onclick="window.location.href='./add_customer.php'">
+            <i class="fas fa-plus"></i> Add Customer
+        </button>
+        <button class="btn onebytwo" onclick="window.location.href='./view_customer.php'">
+            <i class="fab fa-buffer"></i> View Customer
+        </button>
+        <button class="btn one" onclick="window.location.href='./report.php';">
+        <i class="fas fa-database"></i> Report
+        </button>
+        <button class="btn one" onclick="window.location.href='./transactions.php';">
+        <i class="fas fa-users-cog"></i> Transaction
+        </button>
+    </div>
 </div>
-</div>
-</section>
+<footer>
+    <p class="link-admin"><a href="./logout.php">Logout</a></p>
+    <p class="copyright">&copy;All right Reserved Masafi water co.</p>
+</footer>
+
+      <!-- <? echo('<a href="change_password_driver.php?driver_id='.$_SESSION['driver_id'].'">Change password</a>');
+        echo($_SESSION['driver_id']);?> -->
 
 </main>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!--<script src="asset/app.js"></script>-->
 </body>
 </html>

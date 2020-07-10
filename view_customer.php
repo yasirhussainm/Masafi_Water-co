@@ -12,38 +12,21 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Masafi</title>
-
-<link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    crossorigin="anonymous">
-
-<link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-    crossorigin="anonymous">
-
-<link rel="stylesheet"
-    href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
-
-<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-
-<script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/style.css" />
+    <title>Masafi water ditribution company</title>
 </head>
 <body>
-
-<div class="container">
-<h2>Customer Details</h2>
+<div class="wrapper">
+<div class="main">
+    <header>
+    Customer Details
+    </header>
 <?php
 
 
@@ -86,7 +69,16 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
-<p><a href="add_customer.php">Add New Entry</a></p>
-<p><a href="index.php">Cancel</a></p>
-
+<div class="row">
+        <button class="btn onebytwo left-btn" onclick="window.location.href='./add_customer.php';">
+            <i class="fas fa-user-tie"></i> Add New Entry
+        </button>
+        <button class="btn onebytwo" onclick="window.location.href='./index.php';">
+            <i class="fas fa-user-friends"></i> Cancel
+        </button>
+</div>
+<!-- <p><a href="add_customer.php">Add New Entry</a></p>
+<p><a href="index.php">Cancel</a></p> -->
+</div>
+</div>
 </body>

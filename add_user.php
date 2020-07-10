@@ -64,18 +64,21 @@ if ((isset($_POST['username'])) && (isset($_POST['name'])))
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>RAZA ILTHAMISH</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/style.css" />
+    <title>Masafi water ditribution company</title>
 </head>
-<div class="container">
 <body>
-<h1>Adding User </h1>
+<div class="wrapper">
+<div class="main">
+    <header>
+        Adding User
+    </header>
 <?php
 // Note triple not equals and think how badly double
 // not equals would work here...
@@ -95,14 +98,19 @@ if ( isset($_SESSION['error']) ) {
 <input type="text" name="username" id="username"><br/>
 <label for="name">name</label>
 <input type="text" name="name" id="name"><br/>
-<input type="radio" id="driver" name="user_type" value="driver">
-<label for="driver">driver</label><br>
-<input type="radio" id="admin" name="user_type" value="admin">
-<label for="admin">admin</label><br>
+<div class="row radio">
+    <input type="radio" id="driver" name="user_type" value="driver">
+    <label for="driver">driver</label><br>
+</div>
+<div class="row radio">
+    <input type="radio" id="admin" name="user_type" value="admin">
+    <label for="admin">admin</label><br>
+</div>
 <input type="submit" value="Add">
 <input type="submit" name="cancel" value="cancel">
 </form>
 
-</div>
 <p>CONTACT ADMINISTRATOR FOR DEFAULT PASSWORD</p>
+</div>
+</div>
 </body>

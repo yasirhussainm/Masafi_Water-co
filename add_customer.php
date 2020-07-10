@@ -14,18 +14,21 @@ if ( isset($_POST['cancel']) ) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>RAZA ILTHAMISH</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/style.css" />
+    <title>Masafi water ditribution company</title>
 </head>
-<div class="container">
 <body>
-<h1>Tracking data for <?php echo(htmlentities((isset($_SESSION['driver'])) ? $_SESSION['driver'] : $_SESSION['admin'])); ?></h1>
+<div class="wrapper">
+<div class="main">
+    <header>
+        Tracking data for <?php echo(htmlentities((isset($_SESSION['driver'])) ? $_SESSION['driver'] : $_SESSION['admin'])); ?>
+    </header>
 <?php
 
 if ( isset($_SESSION['success']) ) {
@@ -43,9 +46,9 @@ if ( isset($_SESSION['error']) ) {
 <label for="email">email</label>
 <input type="text" name="email" id="email"><br/>
 <label for="mobile">mobile</label>
-<input type="number" name="mobile" id="mobile"><br/>
+<input type="text" name="mobile" id="mobile"><br/>
 <label for="iqama">iqama</label>
-<input type="number" name="iqama" id="iqama"><br/>
+<input type="text" name="iqama" id="iqama"><br/>
 <label>iqama photo:</label>
 <input type="file" name="image_iqama"><br/>
 <label>agreement photo:</label>
@@ -55,5 +58,6 @@ if ( isset($_SESSION['error']) ) {
 <form  method="POST">
 <input type="submit" name="cancel" value="cancel">
 </form>
+</div>
 </div>
 </body>

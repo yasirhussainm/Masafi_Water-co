@@ -70,18 +70,24 @@ if ((isset($_POST['returned'])) && (isset($_POST['invoice'])) && (isset($_POST['
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>RAZA ILTHAMISH</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/style.css" />
+    <title>Masafi water ditribution company</title>
 </head>
-<div class="container">
 <body>
-<h1>Tracking data for <?php echo(htmlentities((isset($_SESSION['driver'])) ? $_SESSION['driver'] : $_SESSION['admin'])); ?></h1>
+<div class="wrapper">
+<div class="main">
+    <header>
+        Transactions
+    </header>
+    <div class="login-info">
+        <p>Loged in as <?php echo(htmlentities((isset($_SESSION['driver'])) ? $_SESSION['driver'] : $_SESSION['admin'])); ?></p>
+    </div>
 <?php
 // Note triple not equals and think how badly double
 // not equals would work here...
@@ -97,16 +103,14 @@ if ( isset($_SESSION['error']) ) {
 }
 ?>
 <form method="POST"><br/><br/>
-<label for="name">Name</label>
-<input type="text" name="name" class="customer_name" id="name"><br/>
-<label for="added">added</label>
-<input type="text" name="added" id="added"><br/>
-<label for="returned">returned</label>
-<input type="text" name="returned" id="returned"><br/>
-<label for="invoice">invoice</label>
-<input type="text" name="invoice" id="invoice"><br/>
-<input type="submit" value="Add">
+<input type="text" name="name" id="name" placeholder="Name" class="transaction--field" style="margin: 0;"><br/>
+<input type="number" name="added" id="added" placeholder="Added" class="transaction--field" style="margin: 0;"><br/>
+<input type="number" name="returned" id="returned" placeholder="Returned" class="transaction--field" style="margin: 0;"><br/>
+<input type="text" name="invoice" id="invoice" placeholder="Invoice" class="transaction--field" style="margin: 0;"><br/>
+<div class="row">
 <input type="submit" name="cancel" value="cancel">
+<input type="submit" value="Add" style="margin-left: 10;">
+</div>
 </form>
 <script>
 

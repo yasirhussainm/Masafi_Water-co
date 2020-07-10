@@ -12,6 +12,7 @@ html{
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  transition: 0.1s ease-in;
 }
 body {
   font-family: 'Roboto', sans-serif;  font-size: 16rem;
@@ -31,6 +32,17 @@ body {
 .main {
   width: 100%;
   padding: 10%;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.col {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 /* ============= */
 header {
@@ -64,6 +76,17 @@ input {
   margin-bottom: 2.2em;
   padding: 1.2em;
   border-radius: 10px;
+}
+.row > input, .row > label {
+  display: inline;
+  width: auto;
+  margin: auto;
+} 
+.radio {
+  width: 20%;
+}
+.transaction--field {
+  margin: 0;
 }
 input[type=text], input[type=password] {
   transition: 0.1s ease-in-out;
@@ -104,11 +127,6 @@ a:active {
 /*========*/
 /* PORTAL */
 /*========*/
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .admin--btn-layout {
   flex-wrap: wrap;
   
@@ -141,7 +159,6 @@ i {
 }
 /*-----*/
 /*MODAL*/
-/*------/
 /* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
